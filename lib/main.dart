@@ -33,7 +33,7 @@ class MyHomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(width: 200,),
+          SizedBox(width: double.infinity,),
           Text('Calender',
           style: TextStyle(
             fontWeight: FontWeight.w900,
