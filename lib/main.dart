@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -41,10 +42,31 @@ class MyHomePage extends StatelessWidget {
             color: Colors.white
           ),
           ),
-          Icon(Icons.calendar_month,
-          size: 30,
-          color: Colors.white
-          )
+         GestureDetector(
+  onTap: () async {
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      //initialDate: DateTime.now(),
+      firstDate: DateTime(2000),  // earliest selectable date
+      lastDate: DateTime(2100),   // latest selectable date
+    );
+
+    if (pickedDate == null) {
+  Get.snackbar('No Date Selected', "Please pick a date!");
+} else {
+  // Handle the picked date, e.g.:
+  print('Selected date: $pickedDate');
+  // Or update a controller/state variable
+}
+
+  },
+  child: Icon(
+    Icons.calendar_month,
+    size: 30,
+    color: Colors.white,
+  ),
+)
+
         ],
       ),
     );
