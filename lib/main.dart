@@ -30,6 +30,8 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text('Calender',
           style: TextStyle(
@@ -37,6 +39,10 @@ class MyHomePage extends StatelessWidget {
             fontSize: 26,
             color: Colors.white
           ),
+          ),
+          Icon(Icons.calendar_month,
+          size: 30,
+          color: Colors.white
           )
         ],
       ),
